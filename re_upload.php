@@ -9,7 +9,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +16,7 @@
     <title>檔案上傳</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        form {
+        form{
             width: 300px;
             margin: 20px auto;
             padding: 20px;
@@ -25,24 +24,30 @@
         }
     </style>
 </head>
-
 <body>
-    <h1 class="header">檔案上傳練習</h1>
-    <!----建立你的表單及設定編碼----->
-    <form action="update_img.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="img" id="file">
-        <input type="hidden" name="imgName" value="<?=$_GET['file'];?>">
-        <input type="text" name="name" id="name">
-        <input type="submit" value="上傳">
+ <h1 class="header">編輯資料</h1>
+ <!----建立你的表單及設定編碼----->
 
-    </form>
+ <?php
+include_once "function.php";
+$id=$_GET['id'];
+$row=find('imgs',$id);
+//dd($row);
+?>
+<form action="update_img.php" method="post" enctype="multipart/form-data">
+<img src="files/<?=$row['filename'];?>" style="width:200px">
+<input type="file" name="filename" id="file">
+<input type="text" name="desc" value="<?=$row['desc'];?>">
+<input type="hidden" name="id" value="<?=$id;?>">
+<input type="submit" value="上傳">
+
+</form>
 
 
 
 
-    <!----建立一個連結來查看上傳後的圖檔---->
+<!----建立一個連結來查看上傳後的圖檔---->  
 
 
 </body>
-
 </html>
