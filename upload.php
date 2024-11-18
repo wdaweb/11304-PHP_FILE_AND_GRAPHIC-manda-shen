@@ -9,7 +9,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +16,7 @@
     <title>檔案上傳</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        form {
+        form{
             width: 300px;
             margin: 20px auto;
             padding: 20px;
@@ -25,23 +24,21 @@
         }
     </style>
 </head>
-
 <body>
-    <h1 class="header">檔案上傳練習</h1>
-    <!----建立你的表單及設定編碼----->
-    <form action="manage.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="img" id="file">
-        <input type="text" name="name" id="name">
-        <input type="submit" value="上傳">
+ <h1 class="header">檔案上傳練習</h1>
+ <!----建立你的表單及設定編碼----->
+<form action="manage.php" method="post" enctype="multipart/form-data">
+ <input type="file" name="filename">
+ <input type="text" name="desc">
+ <input type="submit" value="上傳">
 
-    </form>
-
-
+</form>
 
 
-    <!----建立一個連結來查看上傳後的圖檔---->
+
+
+<!----建立一個連結來查看上傳後的圖檔---->  
 
 
 </body>
-
 </html>
